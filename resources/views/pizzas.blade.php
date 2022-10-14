@@ -1,19 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body>
-   <div class="flex items-center justify-center h-screen flex-col">
-    <div class="text-6xl">Pizzas</div>
-    <p>{{$type}} - {{$base}} - {{$price}}</p>
-    @for($i=0; i < count($pizzas); i++;){
-       <p>{{$pizzas[$i]['type']}}</p>
-    }
+@extends('layouts.layout')
+
+@section('content')
+<div class="flex items-center justify-center h-screen flex-col">
+
+<div class="text-6xl">Pizza List</div>
+
+{{-- <p>{{$type}} - {{$base}} - {{$price}}</p> --}}
+
+{{-- @for($i = 0; $i < count($pizzas); $i++)
+       <p>{{ $pizzas[$i]['type'] }}</p>
+@endfor --}}
+
+@foreach($pizzas as $pizza)
+   <div>
+       {{$loop -> index}} {{ $pizza['type'] }} - {{ $pizza['base'] }}
+         @if($loop->first)
+         <span>- first in the loop</span>
+         @endif
+         @if($loop->last)
+         <span>- last in the loop</span>
+         @endif
+      </div>
+ @endforeach
    </div>
-</body>
-</html>
+@endsection

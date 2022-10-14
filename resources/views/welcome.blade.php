@@ -1,13 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body>
+@extends('layouts.layout')
+
+@section('content')
    <div class="flex items-center justify-center h-screen flex-col">
     <div class="text-6xl">Laravel</div>
    <div class="pt-14 w-3/4 flex justify-around items-center" style="color:lightslategray;">
@@ -21,5 +14,4 @@
     <a href="#">Github</a>
    </div>
    </div>
-</body>
-</html>
+@endsection
